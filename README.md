@@ -26,7 +26,6 @@
   - [Üyelik Fonksiyonları](#üyelik-fonksiyonları)
   - [Kural Tabanı](#kural-tabanı)
   - [Durulama](#durulama-defuzzification)
-- [Proje Mimarisi](#-proje-mimarisi)
 - [Arayüz Sekmeleri](#-arayüz-sekmeleri)
 - [Hazır Senaryolar](#-hazır-senaryolar)
 - [Klasik Kontrol ile Karşılaştırma](#-klasik-kontrol-ile-karşılaştırma)
@@ -266,30 +265,6 @@ y* =  ─────────────────────
 Bu yöntem, tüm aktif kuralların katkısını dengeli biçimde yansıtır ve sürekli, pürüzsüz bir kontrol çıktısı üretir.
 
 ---
-
-## 🗂️ Proje Mimarisi
-
-```
-akilli-iklimlendirme/
-│
-├── app.py                  # Streamlit arayüzü — ana uygulama
-├── fuzzy_system.py         # Bulanık mantık motoru
-│   ├── SmartClimateSystem  # Ana sınıf
-│   ├── hesapla()           # Çıkarım + aktif kural listesi
-│   ├── klasik_kontrol_     # Karşılaştırma için crisp sistem
-│   │   karsilastir()
-│   └── linguistik_yorum()  # Dilsel durum etiketi
-│
-├── visualizations.py       # Matplotlib / Seaborn grafikleri
-│   ├── uylik_fonksiyonu_ciz()          # Üyelik fonksiyonu grafikleri
-│   ├── durulama_gorsellestir()         # Defuzzification analizi
-│   ├── kural_aktivasyon_grafigi()      # Aktivasyon çubuk grafiği
-│   ├── kontrol_yuzeyi_3d()             # 3D yüzey grafiği
-│   └── sicaklik_nem_isı_haritasi()     # 2D ısı haritası
-│
-├── requirements.txt        # Python bağımlılıkları
-└── README.md               # Bu dosya
-```
 
 ### Veri Akışı
 
